@@ -29,14 +29,16 @@ Keep the Supabase service-role secret out of browser env files. If you need it l
 
 If you are moving from the local mock layer to Supabase, also run [`supabase_migration_update.sql`](/C:/Users/USER/Downloads/brotherspace/supabase_migration_update.sql) in the Supabase SQL editor so the profile preferences column and admin policies match the app.
 
-## Netlify Deploy
+## Vercel Deploy
 
-Use these settings when connecting the repo to Netlify:
+Use these settings when importing the repo into Vercel:
 
 - Build command: `npm run build`
-- Publish directory: `dist`
+- Output directory: `dist`
 
-Set these environment variables in Netlify site settings:
+Set these environment variables in Vercel project settings:
 
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
+
+If you want to keep Netlify as a fallback, the existing `netlify.toml` still works too.

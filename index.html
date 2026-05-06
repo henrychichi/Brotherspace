@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BrotherSpace</title>
+    <!-- Production-ready static Tailwind CSS build -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/" crossorigin></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script crossorigin>
+        // Ensure process.env is safely accessible to modules
+        window.process = window.process || { env: {} };
+        
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error('System Error Captured:', { message, source, line: lineno, column: colno, error });
+            return false;
+        };
+
+        window.onunhandledrejection = function(event) {
+            console.error('Unhandled Promise Rejection:', event.reason);
+        };
+    </script>
+    <style>
+        :root {
+            --brand-bg: #111111;
+            --brand-surface: #1E1E24;
+            --brand-accent: #4A44F2;
+            --brand-primary: #F9FAFB;
+            --brand-secondary: #9CA3AF;
+            --brand-hint: #6B7280;
+            --brand-border: #2D2D35;
+            --brand-gold: #FCD34D;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-bg);
+            color: var(--brand-primary);
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg-brand-bg { background-color: var(--brand-bg); }
+        .bg-brand-surface { background-color: var(--brand-surface); }
+        .bg-brand-accent { background-color: var(--brand-accent); }
+        .text-brand-primary { color: var(--brand-primary); }
+        .text-brand-secondary { color: var(--brand-secondary); }
+        .text-brand-hint { color: var(--brand-hint); }
+        .text-brand-accent { color: var(--brand-accent); }
+        .border-brand-surface { border-color: var(--brand-surface); }
+        .border-brand-accent { border-color: var(--brand-accent); }
+        .border-brand-border { border-color: var(--brand-border); }
+        .rounded-brand { border-radius: 16px; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--brand-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--brand-surface); border-radius: 10px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Dark Mode Overrides */
+        .bg-white { background-color: var(--brand-surface) !important; }
+        .bg-\[\#F4F6FB\] { background-color: var(--brand-bg) !important; }
+        .bg-gray-50 { background-color: var(--brand-bg) !important; }
+        .bg-gray-100 { background-color: var(--brand-border) !important; }
+        .bg-gray-200 { background-color: #3F3F46 !important; }
+        .hover\:bg-gray-100:hover { background-color: #3F3F46 !important; }
+        .hover\:bg-gray-200:hover { background-color: #52525B !important; }
+        
+        .text-gray-900, .text-gray-800, .text-gray-700 { color: var(--brand-primary) !important; }
+        .text-gray-600, .text-gray-500 { color: var(--brand-secondary) !important; }
+        .text-gray-400 { color: var(--brand-hint) !important; }
+        
+        .placeholder-gray-400::placeholder, .placeholder-gray-500::placeholder { color: var(--brand-hint) !important; }
+        
+        .border-gray-100, .border-gray-200, .border-gray-300 { border-color: var(--brand-border) !important; }
+        .border-white { border-color: var(--brand-surface) !important; }
+        
+        .bg-\[\#4A44F2\] { background-color: var(--brand-accent) !important; }
+        .text-\[\#4A44F2\] { color: var(--brand-accent) !important; }
+        .border-\[\#4A44F2\] { border-color: var(--brand-accent) !important; }
+        
+        .hover\:text-\[\#4A44F2\]:hover { color: var(--brand-accent) !important; }
+        .hover\:border-\[\#4A44F2\]\/30:hover { border-color: rgba(74, 68, 242, 0.3) !important; }
+        .focus\:border-\[\#4A44F2\]:focus { border-color: var(--brand-accent) !important; }
+        .focus\:ring-\[\#4A44F2\]:focus { --tw-ring-color: var(--brand-accent) !important; }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
